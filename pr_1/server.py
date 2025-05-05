@@ -7,7 +7,9 @@ from settings import IP_ADDRESS, PORT, ADDRESS
 CLIENTS = []
 NICKNAMES = []
 BLOCKED_USERS_FILE = "ban.txt"
-ADMIN_PASSWORD = "c1c224b03cd9bc7b6a86d77f5dace40191766c485cd55dc48caf9ac873335d6f"
+ADMIN_PASSWORD = (
+    "c1c224b03cd9bc7b6a86d77f5dace40191766c485cd55dc48caf9ac873335d6f"
+)
 
 with open(BLOCKED_USERS_FILE, "r") as f:
     BLOCKED_USERS = set(f.read().splitlines())
@@ -43,7 +45,9 @@ def handle_client(client):
 
         print(f"Nickname of the client is {nickname}")
         client.send("Connected to the chat server!".encode("utf-8"))
-        broadcast(f"{nickname} has joined the chat!".encode("utf-8"), sender=client)
+        broadcast(
+            f"{nickname} has joined the chat!".encode("utf-8"), sender=client
+        )
 
         while True:
             try:
