@@ -29,7 +29,6 @@ def handle_client(client):
 
         if nickname in BLOCKED_USERS:
             client.send("You are blocked from this server.".encode("utf-8"))
-            client.close()
             return
 
         if nickname == "Admin":
@@ -37,7 +36,6 @@ def handle_client(client):
             password = client.recv(1024).decode("utf-8")
             if sha256(password.encode()).hexdigest() != ADMIN_PASSWORD:
                 client.send("Access denied.".encode("utf-8"))
-                client.close()
                 return
 
         NICKNAMES.append(nickname)

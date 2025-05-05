@@ -11,10 +11,11 @@ def receive_messages(client):
             if not message:
                 print("Server has closed the connection.")
                 client.close()
+                return
             print(message)
-        except Exception as e:
-            print(f"Error: {e}")
+        except Exception:
             client.close()
+            return
 
 
 def send_messages(client):
