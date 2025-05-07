@@ -3,15 +3,28 @@ revision = 1
 requires-python = ">=3.13"
 
 [[package]]
+name = "aioftp"
+version = "0.25.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/a0/a2/2df9edca79015268e5f3f7afcda76ea9fc11ff66cd6d1345158cb9e122dc/aioftp-0.25.1.tar.gz", hash = "sha256:4d2fb0b77d3fda4282cffcd05ba70567d8940cd9fdeedf10bdf788a001208016", size = 64687 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c2/a2/ddcb69fe22b6c2b04dfb6518ffe1f2c33f0f3ccca3e0007eb6d0e24638f1/aioftp-0.25.1-py3-none-any.whl", hash = "sha256:80c486e4e62262eb690ef14d7b517c7c44e27616bff1bf989bb6ee81662eb4c5", size = 39169 },
+]
+
+[[package]]
 name = "network-programming-2025"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "aioftp" },
     { name = "ruff" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "ruff", specifier = ">=0.11.8" }]
+requires-dist = [
+    { name = "aioftp", specifier = ">=0.25.1" },
+    { name = "ruff", specifier = ">=0.11.8" },
+]
 
 [[package]]
 name = "ruff"

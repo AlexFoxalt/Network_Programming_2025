@@ -32,7 +32,7 @@ def calculate_file_hash(file_path: Path) -> str:
     return hash_md5.hexdigest()
 
 
-def create_arc_file(today_files: dict[str, Path]) -> tuple[str, str]:
+def create_arc_file(today_files: dict[str, Path]) -> tuple[str, list[str]]:
     timestamp = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
     arc_filename = f"{timestamp}.arc"
 
