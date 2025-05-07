@@ -1,0 +1,50 @@
+drwxr-xr-x    7 998      998          4096 Apr 26  2018 bionic
+drwxr-xr-x    7 998      998          4096 May 07 02:35 bionic-backports
+drwxr-xr-x    7 998      998          4096 May 07 02:35 bionic-proposed
+drwxr-xr-x    7 998      998          4096 May 07 02:32 bionic-security
+drwxr-xr-x    7 998      998          4096 May 07 02:34 bionic-updates
+lrwxrwxrwx    1 998      998             8 Apr 22 14:39 devel -> questing
+lrwxrwxrwx    1 998      998            18 Apr 22 14:39 devel-backports -> questing-backports
+lrwxrwxrwx    1 998      998            17 Apr 22 14:39 devel-proposed -> questing-proposed
+lrwxrwxrwx    1 998      998            17 Apr 22 14:39 devel-security -> questing-security
+lrwxrwxrwx    1 998      998            16 Apr 22 14:39 devel-updates -> questing-updates
+drwxr-xr-x    7 998      998          4096 Apr 23  2020 focal
+drwxr-xr-x    7 998      998          4096 May 07 02:30 focal-backports
+drwxr-xr-x    7 998      998          4096 May 07 02:30 focal-proposed
+drwxr-xr-x    7 998      998          4096 May 07 06:15 focal-security
+drwxr-xr-x    7 998      998          4096 May 07 07:21 focal-updates
+drwxr-xr-x    7 998      998          4096 Apr 21  2022 jammy
+drwxr-xr-x    7 998      998          4096 May 07 02:24 jammy-backports
+drwxr-xr-x    7 998      998          4096 May 07 07:17 jammy-proposed
+drwxr-xr-x    7 998      998          4096 May 07 07:15 jammy-security
+drwxr-xr-x    7 998      998          4096 May 07 07:17 jammy-updates
+drwxr-xr-x    7 998      998          4096 Apr 25  2024 noble
+drwxr-xr-x    7 998      998          4096 May 07 02:19 noble-backports
+drwxr-xr-x    7 998      998          4096 May 07 07:12 noble-proposed
+drwxr-xr-x    7 998      998          4096 May 07 06:10 noble-security
+drwxr-xr-x    7 998      998          4096 May 07 07:12 noble-updates
+drwxr-xr-x    7 998      998          4096 Oct 11  2024 oracular
+drwxr-xr-x    7 998      998          4096 May 07 02:17 oracular-backports
+drwxr-xr-x    7 998      998          4096 May 07 07:11 oracular-proposed
+drwxr-xr-x    7 998      998          4096 May 07 06:09 oracular-security
+drwxr-xr-x    7 998      998          4096 May 07 03:56 oracular-updates
+drwxr-xr-x    7 998      998          4096 Apr 17 15:44 plucky
+drwxr-xr-x    7 998      998          4096 May 07 02:17 plucky-backports
+drwxr-xr-x    7 998      998          4096 May 07 07:11 plucky-proposed
+drwxr-xr-x    7 998      998          4096 May 07 02:16 plucky-security
+drwxr-xr-x    7 998      998          4096 May 07 02:16 plucky-updates
+drwxr-xr-x    7 998      998          4096 May 07 07:11 questing
+drwxr-xr-x    7 998      998          4096 May 07 02:16 questing-backports
+drwxr-xr-x    7 998      998          4096 May 07 07:11 questing-proposed
+drwxr-xr-x    7 998      998          4096 May 07 02:16 questing-security
+drwxr-xr-x    7 998      998          4096 May 07 02:16 questing-updates
+drwxr-xr-x    6 998      998          4096 Oct 07  2015 trusty
+drwxr-xr-x    6 998      998          4096 Oct 08  2024 trusty-backports
+drwxr-xr-x    6 998      998          4096 Nov 16 17:49 trusty-proposed
+drwxr-xr-x    6 998      998          4096 Jan 18 01:09 trusty-security
+drwxr-xr-x    6 998      998          4096 Jan 18 01:09 trusty-updates
+drwxr-xr-x    7 998      998          4096 Apr 21  2016 xenial
+drwxr-xr-x    7 998      998          4096 May 07 02:36 xenial-backports
+drwxr-xr-x    7 998      998          4096 May 07 02:36 xenial-proposed
+drwxr-xr-x    7 998      998          4096 May 07 02:35 xenial-security
+drwxr-xr-x    7 998      998          4096 May 07 02:36 xenial-updates

@@ -1,0 +1,88 @@
+cdrom-xen/cdrom/xen/initrd.gz                   -- initrd for installing under Xen
+cdrom-xen/cdrom/xen/vmlinuz                     -- kernel image for installing under Xen
+cdrom-xen/cdrom/xen/xm-debian.cfg               -- example Xen configuration
+cdrom/debian-cd_info.tar.gz                     -- isolinux config files for CD
+cdrom/initrd.gz                                 -- initrd for use with isolinux to build a CD
+cdrom/vmlinuz                                   -- kernel for use with isolinux to build a CD
+hd-media/boot.img.gz                            -- 800 mb image (compressed) for USB memory stick
+hd-media/initrd.gz                              -- for use on USB memory sticks
+hd-media/vmlinuz                                -- for use on USB memory sticks
+netboot/boot.img.gz                             -- compressed network install image for USB memory stick
+netboot/mini.iso                                -- tiny CD image that boots the netboot installer
+netboot/netboot.tar.gz                          -- tarball of PXE boot directory
+netboot/ubuntu-installer                        -- PXE boot directory for tftp server
+netboot/xen/initrd.gz                           -- initrd for installing under Xen
+netboot/xen/vmlinuz                             -- kernel image for installing under Xen
+netboot/xen/xm-debian.cfg                       -- example Xen configuration
+utopic-cdrom-xen/utopic-cdrom/xen/initrd.gz     -- initrd for installing under Xen
+utopic-cdrom-xen/utopic-cdrom/xen/vmlinuz       -- kernel image for installing under Xen
+utopic-cdrom-xen/utopic-cdrom/xen/xm-debian.cfg -- example Xen configuration
+utopic-cdrom/debian-cd_info.tar.gz              -- isolinux config files for CD
+utopic-cdrom/gtk/debian-cd_info.tar.gz          -- isolinux help screens for CD (graphical)
+utopic-cdrom/gtk/initrd.gz                      -- initrd for use with isolinux to build a CD (graphical)
+utopic-cdrom/gtk/vmlinuz                        -- kernel for use with isolinux to build a CD (graphical)
+utopic-cdrom/initrd.gz                          -- initrd for use with isolinux to build a CD
+utopic-cdrom/vmlinuz                            -- kernel for use with isolinux to build a CD
+utopic-hd-media/boot.img.gz                     -- 800 mb image (compressed) for USB memory stick
+utopic-hd-media/gtk/initrd.gz                   -- for use on USB memory sticks
+utopic-hd-media/gtk/vmlinuz                     -- for use on USB memory sticks
+utopic-hd-media/initrd.gz                       -- for use on USB memory sticks
+utopic-hd-media/vmlinuz                         -- for use on USB memory sticks
+utopic-netboot/boot.img.gz                      -- compressed network install image for USB memory stick
+utopic-netboot/mini.iso                         -- tiny CD image that boots the netboot installer
+utopic-netboot/netboot.tar.gz                   -- tarball of PXE boot directory
+utopic-netboot/ubuntu-installer                 -- PXE boot directory for tftp server
+vivid-cdrom-xen/vivid-cdrom/xen/initrd.gz       -- initrd for installing under Xen
+vivid-cdrom-xen/vivid-cdrom/xen/vmlinuz         -- kernel image for installing under Xen
+vivid-cdrom-xen/vivid-cdrom/xen/xm-debian.cfg   -- example Xen configuration
+vivid-cdrom/debian-cd_info.tar.gz               -- isolinux config files for CD
+vivid-cdrom/gtk/debian-cd_info.tar.gz           -- isolinux help screens for CD (graphical)
+vivid-cdrom/gtk/initrd.gz                       -- initrd for use with isolinux to build a CD (graphical)
+vivid-cdrom/gtk/vmlinuz                         -- kernel for use with isolinux to build a CD (graphical)
+vivid-cdrom/initrd.gz                           -- initrd for use with isolinux to build a CD
+vivid-cdrom/vmlinuz                             -- kernel for use with isolinux to build a CD
+vivid-hd-media/boot.img.gz                      -- 800 mb image (compressed) for USB memory stick
+vivid-hd-media/gtk/initrd.gz                    -- for use on USB memory sticks
+vivid-hd-media/gtk/vmlinuz                      -- for use on USB memory sticks
+vivid-hd-media/initrd.gz                        -- for use on USB memory sticks
+vivid-hd-media/vmlinuz                          -- for use on USB memory sticks
+vivid-netboot/boot.img.gz                       -- compressed network install image for USB memory stick
+vivid-netboot/mini.iso                          -- tiny CD image that boots the netboot installer
+vivid-netboot/netboot.tar.gz                    -- tarball of PXE boot directory
+vivid-netboot/ubuntu-installer                  -- PXE boot directory for tftp server
+wily-cdrom-xen/wily-cdrom/xen/initrd.gz         -- initrd for installing under Xen
+wily-cdrom-xen/wily-cdrom/xen/vmlinuz           -- kernel image for installing under Xen
+wily-cdrom-xen/wily-cdrom/xen/xm-debian.cfg     -- example Xen configuration
+wily-cdrom/debian-cd_info.tar.gz                -- isolinux config files for CD
+wily-cdrom/gtk/debian-cd_info.tar.gz            -- isolinux help screens for CD (graphical)
+wily-cdrom/gtk/initrd.gz                        -- initrd for use with isolinux to build a CD (graphical)
+wily-cdrom/gtk/vmlinuz                          -- kernel for use with isolinux to build a CD (graphical)
+wily-cdrom/initrd.gz                            -- initrd for use with isolinux to build a CD
+wily-cdrom/vmlinuz                              -- kernel for use with isolinux to build a CD
+wily-hd-media/boot.img.gz                       -- 800 mb image (compressed) for USB memory stick
+wily-hd-media/gtk/initrd.gz                     -- for use on USB memory sticks
+wily-hd-media/gtk/vmlinuz                       -- for use on USB memory sticks
+wily-hd-media/initrd.gz                         -- for use on USB memory sticks
+wily-hd-media/vmlinuz                           -- for use on USB memory sticks
+wily-netboot/boot.img.gz                        -- compressed network install image for USB memory stick
+wily-netboot/mini.iso                           -- tiny CD image that boots the netboot installer
+wily-netboot/netboot.tar.gz                     -- tarball of PXE boot directory
+wily-netboot/ubuntu-installer                   -- PXE boot directory for tftp server
+xenial-cdrom-xen/xenial-cdrom/xen/initrd.gz     -- initrd for installing under Xen
+xenial-cdrom-xen/xenial-cdrom/xen/vmlinuz       -- kernel image for installing under Xen
+xenial-cdrom-xen/xenial-cdrom/xen/xm-debian.cfg -- example Xen configuration
+xenial-cdrom/debian-cd_info.tar.gz              -- isolinux config files for CD
+xenial-cdrom/gtk/debian-cd_info.tar.gz          -- isolinux help screens for CD (graphical)
+xenial-cdrom/gtk/initrd.gz                      -- initrd for use with isolinux to build a CD (graphical)
+xenial-cdrom/gtk/vmlinuz                        -- kernel for use with isolinux to build a CD (graphical)
+xenial-cdrom/initrd.gz                          -- initrd for use with isolinux to build a CD
+xenial-cdrom/vmlinuz                            -- kernel for use with isolinux to build a CD
+xenial-hd-media/boot.img.gz                     -- 800 mb image (compressed) for USB memory stick
+xenial-hd-media/gtk/initrd.gz                   -- for use on USB memory sticks
+xenial-hd-media/gtk/vmlinuz                     -- for use on USB memory sticks
+xenial-hd-media/initrd.gz                       -- for use on USB memory sticks
+xenial-hd-media/vmlinuz                         -- for use on USB memory sticks
+xenial-netboot/boot.img.gz                      -- compressed network install image for USB memory stick
+xenial-netboot/mini.iso                         -- tiny CD image that boots the netboot installer
+xenial-netboot/netboot.tar.gz                   -- tarball of PXE boot directory
+xenial-netboot/ubuntu-installer                 -- PXE boot directory for tftp server
