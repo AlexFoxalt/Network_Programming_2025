@@ -16,7 +16,7 @@ class FileTransferServer:
         port=9001,
         buffer_size=4096,
         save_dir="received_files",
-    ):
+    ) -> None:
         self.host = host
         self.port = port
         self.buffer_size = buffer_size
@@ -26,7 +26,7 @@ class FileTransferServer:
         self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.corrupt_data = False
 
-    def start(self):
+    def start(self) -> None:
         try:
             self.socket.bind((self.host, self.port))
             self.socket.listen(5)
@@ -45,7 +45,7 @@ class FileTransferServer:
         finally:
             self.socket.close()
 
-    def handle_client(self, client_socket, address):
+    def handle_client(self, client_socket: socket.socket, address: tuple[str, int]) -> None:
         try:
             metadata_json = client_socket.recv(self.buffer_size).decode("utf-8")
             metadata = json.loads(metadata_json)

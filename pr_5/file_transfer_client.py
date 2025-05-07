@@ -7,13 +7,13 @@ from tqdm import tqdm
 
 
 class FileTransferClient:
-    def __init__(self, host="localhost", port=9001, buffer_size=4096):
+    def __init__(self, host="localhost", port=9001, buffer_size=4096) -> None:
         self.host = host
         self.port = port
         self.buffer_size = buffer_size
         self.socket = None
 
-    def connect(self):
+    def connect(self) -> bool:
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         try:
             self.socket.connect((self.host, self.port))
@@ -22,18 +22,18 @@ class FileTransferClient:
             print(f"Connection error: {e}")
             return False
 
-    def close(self):
+    def close(self) -> None:
         if self.socket:
             self.socket.close()
 
-    def calculate_file_hash(self, file_path):
+    def calculate_file_hash(self, file_path: str) -> str:
         hash_md5 = hashlib.md5()
         with open(file_path, "rb") as f:
             for chunk in iter(lambda: f.read(4096), b""):
                 hash_md5.update(chunk)
         return hash_md5.hexdigest()
 
-    def send_file(self, file_path, max_attempts=3):
+    def send_file(self, file_path: str, max_attempts: int = 3) -> bool:
         file_path = Path(file_path)
         if not file_path.exists():
             print(f"Error: File '{file_path}' not found.")
