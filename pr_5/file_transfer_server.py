@@ -133,6 +133,6 @@ class FileTransferServer:
 if __name__ == "__main__":
     server = FileTransferServer()
     # test corruption
-    # server.toggle_corruption()
+    server.toggle_corruption()
 
     server.start()
