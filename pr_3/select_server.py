@@ -15,9 +15,7 @@ def start_non_blocking_server():
     clients = {}
     try:
         while inputs:
-            readable, writable, exceptional = select.select(
-                inputs, [], inputs, 1.0
-            )
+            readable, writable, exceptional = select.select(inputs, [], inputs, 1.0)
 
             for sock in readable:
                 if sock is server_socket:
@@ -46,9 +44,7 @@ def start_non_blocking_server():
                         del clients[sock]
 
             for sock in exceptional:
-                print(
-                    f"Exception condition on {clients[sock] if sock in clients else 'server'}"
-                )
+                print(f"Exception condition on {clients[sock] if sock in clients else 'server'}")
                 inputs.remove(sock)
                 if sock in clients:
                     del clients[sock]

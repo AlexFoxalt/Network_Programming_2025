@@ -26,9 +26,7 @@ def start_client():
     client_socket.connect((HOST, PORT))
     print("Connected to the chat server.")
 
-    receive_thread = threading.Thread(
-        target=receive_messages, args=(client_socket,)
-    )
+    receive_thread = threading.Thread(target=receive_messages, args=(client_socket,))
     receive_thread.start()
 
     send_thread = threading.Thread(target=send_messages, args=(client_socket,))

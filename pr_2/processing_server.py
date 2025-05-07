@@ -12,9 +12,7 @@ def handle_client(client_socket, shared_clients, shared_lock):
                 message = client_socket.recv(1024)
                 if not message:
                     break
-                print(
-                    f"Message from {client_socket.getpeername()}: {message.decode('utf-8')}"
-                )
+                print(f"Message from {client_socket.getpeername()}: {message.decode('utf-8')}")
             except Exception as e:
                 print(f"Error handling client: {e}")
                 with shared_lock:

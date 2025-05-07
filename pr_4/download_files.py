@@ -93,9 +93,7 @@ def main():
     try:
         ftp = connect_to_ftp()
         dists_listing = get_directory_listing(ftp, DISTS_DIR)
-        save_directory_listing(
-            dists_listing, os.path.join(DOWNLOADS_DIR, "ubuntudists.txt")
-        )
+        save_directory_listing(dists_listing, os.path.join(DOWNLOADS_DIR, "ubuntudists.txt"))
         update_dirs = find_update_directories(dists_listing)
 
         for update_dir in update_dirs:

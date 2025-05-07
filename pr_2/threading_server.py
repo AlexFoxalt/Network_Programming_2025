@@ -13,9 +13,7 @@ def handle_client(client_socket):
                 message = client_socket.recv(1024)
                 if not message:
                     break
-                print(
-                    f"Message from {client_socket.getpeername()}: {message.decode('utf-8')}"
-                )
+                print(f"Message from {client_socket.getpeername()}: {message.decode('utf-8')}")
             except Exception as e:
                 print(f"Error handling client: {e}")
                 break
@@ -39,9 +37,7 @@ def start_server():
 
             clients.append(client_socket)
 
-            client_thread = threading.Thread(
-                target=handle_client, args=(client_socket,)
-            )
+            client_thread = threading.Thread(target=handle_client, args=(client_socket,))
             client_thread.daemon = True
             client_thread.start()
     finally:

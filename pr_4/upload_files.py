@@ -47,9 +47,7 @@ def create_arc_file(today_files: dict[str, Path]) -> tuple[str, list[str]]:
     return arc_filename, timestamp.split("_")[0:3]
 
 
-def upload_files_to_ftp(
-    today_files: dict[str, Path], arc_filename: str, date_parts: list[str]
-) -> None:
+def upload_files_to_ftp(today_files: dict[str, Path], arc_filename: str, date_parts: list[str]) -> None:
     backup_dir_name = "_".join(date_parts)
 
     try:
