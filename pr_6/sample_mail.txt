@@ -1,0 +1,11 @@
+[Recipients:]
+alexfoxalt@gmail.com,o.chernyshov@geniusee.com
+[Subject:]
+Session is soon!
+[Body:]
+Hello [login]!
+We are happy to inform you about the upcoming exam.
+Complete all assignments and submit all reports.
+
+Regards, your nerves:)
+        
