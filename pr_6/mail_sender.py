@@ -23,7 +23,7 @@ class MailSender:
         username: str,
         incoming_dir: str = "incoming",
         archive_dir: str = "ARC",
-        support_email: str = None,
+        support_email: str = "",
     ) -> None:
         self.username = username
         self.client = sendgrid.SendGridAPIClient(api_key=os.environ.get("EMAIL_API_KEY"))
@@ -70,7 +70,7 @@ class MailSender:
             logger.error(f"Failed to send email to {recipient}: {e}")
             return False
 
-    def send_support_report(self, file_name: str, total_recipients: int, failed_recipients: list[str]) -> bool:
+    def send_support_report(self, file_name: str, total_recipients: int, failed_recipients: list[str]) -> None:
         subject = f"Email Distribution Report: {file_name}"
 
         body = f"""
@@ -88,10 +88,8 @@ class MailSender:
         try:
             response = self.client.send(mail)
             logger.info(f"Email status code: {response.status_code}")
-            return True
         except Exception as e:
             logger.error(f"Failed to send email to {self.support_email}: {e}")
-            return False
 
     def process_mail_files(self) -> None:
         files = list(self.incoming_dir.glob("*"))

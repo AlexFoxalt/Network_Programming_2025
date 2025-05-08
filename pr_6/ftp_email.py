@@ -22,10 +22,9 @@ class MailSender:
         ftp_user="user",
         ftp_password="password",
         check_interval=60,
-        max_attempts=3,
+        support_email: str = "",
     ):
         self.check_interval = check_interval
-        self.max_attempts = max_attempts
 
         self.ftp_host = ftp_host
         self.ftp_port = ftp_port
@@ -33,6 +32,7 @@ class MailSender:
         self.ftp_password = ftp_password
         self.ftp = None
 
+        self.support_email = support_email
         self.client = sendgrid.SendGridAPIClient(api_key=os.environ.get("EMAIL_API_KEY"))
         self.email_sender = os.environ.get("EMAIL_USERNAME")
 
@@ -117,6 +117,27 @@ class MailSender:
             logger.error(f"Failed to send email to {recipient}: {e}")
             return False
 
+    def send_support_report(self, file_name: str, total_recipients: int, failed_recipients: list[str]) -> None:
+        subject = f"Email Distribution Report: {file_name}"
+
+        body = f"""
+        Distribution Report
+
+        File Name: {file_name}
+        Total Recipients: {total_recipients}
+        Failed Recipients Count: {len(failed_recipients)}
+
+        Failed Recipients:
+        {", ".join(failed_recipients) if failed_recipients else "None"}
+        """
+
+        mail = Mail(Email(self.email_sender), To(self.support_email), subject, Content("text/plain", body))
+        try:
+            response = self.client.send(mail)
+            logger.info(f"Email status code: {response.status_code}")
+        except Exception as e:
+            logger.error(f"Failed to send email to {self.support_email}: {e}")
+
     def process_email_file(self, filename: str) -> bool:
         try:
             logger.info(f"Processing email file: {filename}")
@@ -128,17 +149,16 @@ class MailSender:
 
             recipients, subject, body = self.parse_email_file(content)
 
+            failed_recipients = []
             for recipient in recipients:
-                for attempt in range(self.max_attempts):
-                    if self.send_email(recipient, subject, body):
-                        logger.info(f"Successfully sent email from {filename}")
-                        self.move_file_in_ftp(filename)
-                        return True
-                    else:
-                        logger.warning(f"Attempt {attempt + 1}/{self.max_attempts} failed. Retrying...")
-                        time.sleep(1)
+                success = self.send_email(recipient, subject, body)
+                if not success:
+                    failed_recipients.append(recipient)
 
-            logger.error(f"Failed to send email after {self.max_attempts} attempts. Moving file to error.")
+            self.send_support_report(
+                file_name=filename, total_recipients=len(recipients), failed_recipients=failed_recipients
+            )
+            self.move_file_in_ftp(filename)
             return False
 
         except Exception as e:
@@ -165,4 +185,4 @@ class MailSender:
 
 
 if __name__ == "__main__":
-    MailSender().run()
+    MailSender(support_email="alexfoxalt@gmail.com").run()
