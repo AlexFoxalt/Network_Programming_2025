@@ -5,7 +5,6 @@ import logging
 import shutil
 from datetime import datetime
 from pathlib import Path
-from typing import List, Tuple
 
 import sendgrid
 from dotenv import load_dotenv
@@ -25,7 +24,7 @@ class MailSender:
         incoming_dir: str = "incoming",
         archive_dir: str = "ARC",
         support_email: str = None,
-    ):
+    ) -> None:
         self.username = username
         self.client = sendgrid.SendGridAPIClient(api_key=os.environ.get("EMAIL_API_KEY"))
         self.incoming_dir = Path(incoming_dir)
@@ -36,7 +35,7 @@ class MailSender:
         self.incoming_dir.mkdir(parents=True, exist_ok=True)
         self.archive_dir.mkdir(parents=True, exist_ok=True)
 
-    def parse_mail_file(self, file_path: Path) -> Tuple[List[str], str, str]:
+    def parse_mail_file(self, file_path: Path) -> tuple[list[str], str, str]:
         with open(file_path, "r", encoding="utf-8") as f:
             content = f.read()
 
@@ -71,7 +70,7 @@ class MailSender:
             logger.error(f"Failed to send email to {recipient}: {e}")
             return False
 
-    def send_support_report(self, file_name: str, total_recipients: int, failed_recipients: List[str]) -> bool:
+    def send_support_report(self, file_name: str, total_recipients: int, failed_recipients: list[str]) -> bool:
         subject = f"Email Distribution Report: {file_name}"
 
         body = f"""
@@ -117,10 +116,10 @@ class MailSender:
                 )
 
                 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-                archive_path = self.archive_dir / f"{file_path.stem}_{timestamp}{file_path.suffix}"
-                shutil.move(file_path, archive_path)
+                dest_path = self.archive_dir / f"{file_path.stem}_{timestamp}{file_path.suffix}"
+                shutil.move(file_path, dest_path)
 
-                logger.info(f"File processed and archived as {archive_path.name}")
+                logger.info(f"File processed and moved to {dest_path.name}")
 
             except Exception as e:
                 logger.error(f"Failed to process file {file_path.name}: {e}")
